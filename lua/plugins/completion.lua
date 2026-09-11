@@ -4,7 +4,10 @@ return {
   version = "1.*",
   dependencies = { "rafamadriz/friendly-snippets" },
   opts = {
-    keymap = { preset = "default" },
+    -- Tab accepts the selected completion (and jumps forward through
+    -- snippet placeholders); falls back to normal Tab/indent behavior
+    -- when no menu is open. Unlike "default", <C-y> is NOT bound here.
+    keymap = { preset = "super-tab" },
     completion = {
       documentation = { auto_show = true },
     },
