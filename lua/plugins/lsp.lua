@@ -3,6 +3,21 @@ return {
   event = { "BufReadPre", "BufNewFile" },
   dependencies = { "saghen/blink.cmp" },
   config = function()
+    -- Nicer gutter icons instead of the plain default diagnostic signs.
+    -- Needs a Nerd Font in your terminal to render correctly.
+    vim.diagnostic.config({
+      signs = {
+        text = {
+          [vim.diagnostic.severity.ERROR] = "",
+          [vim.diagnostic.severity.WARN] = "",
+          [vim.diagnostic.severity.INFO] = "",
+          [vim.diagnostic.severity.HINT] = "",
+        },
+      },
+      virtual_text = { spacing = 4, prefix = "●" },
+      severity_sort = true,
+    })
+
     vim.api.nvim_create_autocmd("LspAttach", {
       callback = function(args)
         local client = vim.lsp.get_client_by_id(args.data.client_id)
@@ -25,10 +40,6 @@ return {
       end,
     })
 
-    -- Tells clangd what completion features Neovim can actually render
-    -- (snippets, doc previews, etc.) -- without this it falls back to a
-    -- minimal built-in default, which is why completion looked so bare
-    -- before blink.cmp was wired in here.
     local capabilities = require("blink.cmp").get_lsp_capabilities()
 
     vim.lsp.config("clangd", {
