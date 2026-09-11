@@ -10,7 +10,7 @@ etc.) instead - feel free to skip this section entirely if that's you.
 
 1. Install the packages required to build Neovim:
    ```sh
-   apt install cmake ninja-build git build-essential
+   apt install curl cmake ninja-build git build-essential
    ```
 2. Download the source code:
    ```sh
