@@ -21,3 +21,12 @@ etc.) instead - feel free to skip this section entirely if that's you.
    make CMAKE_BUILD_TYPE=Release CMAKE_INSTALL_PREFIX=~/.local
    make install
    ```
+
+## Installing the C++ toolchain
+
+To enable syntax highlighting, code suggestions and so on, a language server is needed.
+To enable other useful features, like code formatting and linting, more tools are needed.
+You can pick any compiler, but since all these tools come from the LLVM world, I'll use clang:
+```sh
+apt install cmake ninja-build clang clangd clang-tidy clang-format lldb
+```
