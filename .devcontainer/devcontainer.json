@@ -1,0 +1,11 @@
+{
+    "name": "neovim-setup",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "runArgs": [
+        "--hostname=debian",
+        "--network=host"
+    ],
+    "updateRemoteUserUID": true
+}
