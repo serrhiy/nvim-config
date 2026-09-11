@@ -30,3 +30,17 @@ You can pick any compiler, but since all these tools come from the LLVM world, I
 ```sh
 apt install cmake ninja-build clang clangd clang-tidy clang-format lldb
 ```
+
+## Plugin runtime dependencies
+
+```sh
+apt install ripgrep
+```
+
+`tree-sitter-cli` -- used by nvim-treesitter to compile parsers. apt's version is
+older than what the plugin requires, so install the prebuilt binary instead:
+```sh
+curl -Lo /tmp/tree-sitter.gz https://github.com/tree-sitter/tree-sitter/releases/download/v0.27.0/tree-sitter-linux-x64.gz
+gunzip /tmp/tree-sitter.gz
+sudo install -m 755 /tmp/tree-sitter /usr/local/bin/tree-sitter
+```
