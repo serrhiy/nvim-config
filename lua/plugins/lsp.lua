@@ -51,5 +51,10 @@ return {
       capabilities = capabilities,
     })
     vim.lsp.enable("clangd")
+
+    vim.lsp.config("neocmake", {
+      capabilities = capabilities,
+    })
+    vim.lsp.enable("neocmake")
   end,
 }

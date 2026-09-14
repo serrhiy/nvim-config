@@ -11,7 +11,7 @@ return {
     { "<leader>E", "<cmd>NvimTreeFindFile<CR>", desc = "Reveal current file in explorer" },
   },
   opts = {
-    filters = { dotfiles = false },
+    filters = { dotfiles = false, git_ignored = false },
     view = { width = 32 },
   },
 }
